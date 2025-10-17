@@ -8,10 +8,10 @@ from database.connection import get_db
 from schema.challenge import Challenge, ChallengeCreate, ChallengeResponse
 from schema.user import User
 from utils.auth import get_current_user
+# from database.json import llm01
 
 router = APIRouter()
 
-# In-memory storage for user progress (replace with database in production)
 user_progress = {}
 
 def load_challenge_from_json(challenge_id: str) -> Dict[Any, Any]:
@@ -27,6 +27,7 @@ def load_challenge_from_json(challenge_id: str) -> Dict[Any, Any]:
 def get_available_challenges() -> List[str]:
     """Get list of available challenge IDs"""
     json_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "database", "json")
+    json_dir='.\backend\database\json'
     challenge_files = [f for f in os.listdir(json_dir) if f.endswith('.json')]
     return [f.replace('.json', '') for f in challenge_files]
 
