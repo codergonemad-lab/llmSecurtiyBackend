@@ -1,0 +1,85 @@
+{
+  "questions": [
+    {
+      "questionNumber": 1,
+      "question": "What is the primary security risk of Insecure Output Handling in LLM applications?",
+      "answerOptions": [
+        {
+          "text": "The LLM might generate responses that are too verbose",
+          "rationale": "While verbosity can be an issue, it's not a security risk related to insecure output handling.",
+          "isCorrect": false
+        },
+        {
+          "text": "LLM outputs could contain malicious code that gets executed by downstream systems without proper validation",
+          "rationale": "This is the core security risk - when LLM outputs are used by other systems without proper sanitization, they can lead to code injection attacks.",
+          "isCorrect": true
+        },
+        {
+          "text": "The LLM might refuse to answer legitimate user questions",
+          "rationale": "This is a usability issue, not a security vulnerability related to output handling.",
+          "isCorrect": false
+        },
+        {
+          "text": "Users might get confused by the LLM's responses",
+          "rationale": "User confusion is a UX issue, not a security vulnerability.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Think about what happens when LLM output is used as input to other systems without validation."
+    },
+    {
+      "questionNumber": 2,
+      "question": "Which of the following is an example of insecure output handling?",
+      "answerOptions": [
+        {
+          "text": "Displaying LLM responses directly in a web browser without HTML encoding",
+          "rationale": "This can lead to XSS attacks if the LLM output contains malicious JavaScript code.",
+          "isCorrect": true
+        },
+        {
+          "text": "Limiting LLM responses to 500 characters",
+          "rationale": "This is a length restriction, not related to security validation of the output content.",
+          "isCorrect": false
+        },
+        {
+          "text": "Storing LLM responses in a database",
+          "rationale": "Simply storing responses is not inherently insecure - it depends on how they're validated and used.",
+          "isCorrect": false
+        },
+        {
+          "text": "Using LLM responses to generate user notifications",
+          "rationale": "This could be secure if proper validation is applied to the LLM output before notification generation.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Consider scenarios where LLM output could be interpreted as executable code."
+    },
+    {
+      "questionNumber": 3,
+      "question": "What is the recommended approach to mitigate insecure output handling?",
+      "answerOptions": [
+        {
+          "text": "Never use LLM outputs in other systems",
+          "rationale": "This would severely limit the usefulness of LLMs in practical applications.",
+          "isCorrect": false
+        },
+        {
+          "text": "Validate, sanitize, and encode LLM outputs before using them in downstream systems",
+          "rationale": "This is the correct approach - treat LLM output as untrusted data and apply appropriate security measures.",
+          "isCorrect": true
+        },
+        {
+          "text": "Only use LLM outputs for read-only operations",
+          "rationale": "Even read-only operations can be vulnerable to attacks like XSS if outputs aren't properly handled.",
+          "isCorrect": false
+        },
+        {
+          "text": "Trust that the LLM will never generate malicious content",
+          "rationale": "LLMs can be manipulated through prompt injection to generate malicious content, so their output should never be blindly trusted.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Apply the same security principles you would use for any untrusted user input."
+    }
+  ]
+}

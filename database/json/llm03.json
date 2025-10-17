@@ -1,0 +1,85 @@
+{
+  "questions": [
+    {
+      "questionNumber": 1,
+      "question": "What is Training Data Poisoning in the context of LLM security?",
+      "answerOptions": [
+        {
+          "text": "When an LLM generates toxic or harmful content during inference",
+          "rationale": "This describes harmful output generation, not training data poisoning which occurs during the training phase.",
+          "isCorrect": false
+        },
+        {
+          "text": "The intentional manipulation of training data to introduce vulnerabilities or biases into the LLM",
+          "rationale": "This correctly defines training data poisoning - attackers inject malicious or biased data during the training process.",
+          "isCorrect": true
+        },
+        {
+          "text": "When users provide misleading prompts to an LLM",
+          "rationale": "This describes prompt injection, which happens at inference time, not during training.",
+          "isCorrect": false
+        },
+        {
+          "text": "The process of cleaning and preparing training data",
+          "rationale": "This describes data preprocessing, which is actually a defense against poisoning, not the attack itself.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "This attack targets the model during its creation phase, not when it's being used."
+    },
+    {
+      "questionNumber": 2,
+      "question": "Which scenario represents a potential training data poisoning attack?",
+      "answerOptions": [
+        {
+          "text": "An attacker submits misleading information to a public dataset that will be used for LLM training",
+          "rationale": "This is a classic example - attackers contribute poisoned data to datasets that are later used to train models.",
+          "isCorrect": true
+        },
+        {
+          "text": "A user tries to jailbreak an LLM with creative prompts",
+          "rationale": "This is prompt injection/jailbreaking, which happens during inference, not training.",
+          "isCorrect": false
+        },
+        {
+          "text": "An LLM generates factually incorrect information",
+          "rationale": "This could be a result of poisoning, but the generation of incorrect information itself is not the poisoning attack.",
+          "isCorrect": false
+        },
+        {
+          "text": "Someone steals an LLM's model weights",
+          "rationale": "This is model theft, a different type of attack that doesn't involve poisoning training data.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Think about how an attacker could influence what the model learns during training."
+    },
+    {
+      "questionNumber": 3,
+      "question": "What makes training data poisoning particularly challenging to detect?",
+      "answerOptions": [
+        {
+          "text": "The effects may only become apparent after the model is deployed and exhibits biased or harmful behaviors",
+          "rationale": "This is correct - poisoning effects can be subtle and may only manifest in specific contexts or with certain inputs.",
+          "isCorrect": true
+        },
+        {
+          "text": "It requires advanced hacking skills to execute",
+          "rationale": "While some poisoning attacks can be sophisticated, the main challenge is detection, not the technical complexity of execution.",
+          "isCorrect": false
+        },
+        {
+          "text": "It only affects small, experimental models",
+          "rationale": "Training data poisoning can affect models of any size, including large commercial models.",
+          "isCorrect": false
+        },
+        {
+          "text": "It can only be done by model developers",
+          "rationale": "External attackers can poison publicly available datasets or contribute to crowdsourced data collection efforts.",
+          "isCorrect": false
+        }
+      ],
+      "hint": "Consider the timeline between when poisoning occurs and when its effects become visible."
+    }
+  ]
+}
